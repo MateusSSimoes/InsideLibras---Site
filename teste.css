@@ -150,37 +150,6 @@ body{
   color: white;
 }
 
-/* Seção principal */
-.hero {
-  background: url('banner.jpg') center center/cover no-repeat;
-  padding: 100px 20px;
-  text-align: center;
-  color: white;
-  position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color:#6198fd; /* sobreposição azul */
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 24px;
-}
 
 .slider{
   margin: 0 auto;
@@ -194,3 +163,56 @@ body{
   height: 400px;
   display: flex;
 }
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 25%;
+  position: relative;
+}
+
+.slide img{
+  width: 800px;
+}
+
+.manual-navegation{
+  position:absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{
+  border: 2px solid #fff;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn{
+  background-color: transparent;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -25%;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -50%;
+}
+
+
+
+
