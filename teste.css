@@ -213,6 +213,16 @@ body{
   margin-left: -50%;
 }
 
+.navegation-auto div{
+  border: 2px solid #fff;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+
+
 
 
 
