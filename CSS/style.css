@@ -1,0 +1,660 @@
+/* Reset e layout geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4184bf;
+  padding: 1rem 2rem;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+.user-icons a {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Botão Modo Escuro*/
+/* Switch base */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 32px;
+  margin-bottom: 8px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  cursor: pointer;
+  border-radius: 34px;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+/* Ícones */
+.slider .icon {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.slider .sun {
+  background-color: #e6b800;
+  border-radius: 19px;
+  color: #f39c12;
+  width: 70px;
+  height: 35px;
+  text-align: center;
+}
+
+.slider .moon {
+  background-color: #254364;
+  border-radius: 19px;
+  color: #2980b9;
+  width: 70px;
+  height: 35px;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6);
+  text-align: center;
+}
+
+/* Tema escuro */
+
+
+.switch input:checked + .slider .sun {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6);
+}
+
+.switch input:checked + .slider .moon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* RESPONSIVIDADE PARA O SWITCH */
+@media (max-width: 768px) {
+  .switch {
+    width: 100px;
+    height: 26px;
+  }
+
+  .slider {
+    font-size: 16px;
+    padding: 0 6px;
+  }
+
+  .slider .icon {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .switch {
+    width: 48px;
+    height: 22px;
+  }
+
+  .slider {
+    font-size: 14px;
+    padding: 0 4px;
+  }
+
+  .slider .icon {
+    font-size: 14px;
+  }
+}
+
+
+
+
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.slides {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: block;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Navegação do slider */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Dots do slider */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 4;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #ffcc00;
+}
+
+/* Overlay e conteúdo do hero */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background-color: #ffcc00;
+  color: #003366;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background-color: #4184bf;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    padding: 1rem;
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .user-icons {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/*SOBRE*/
+.profissionais-section {
+  background-color: #4184bf;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.profissionais-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profissionais-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.profissionais-section h2 span {
+  color: #ffcc00; /* Destaque amarelo */
+}
+
+.profissionais-section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0.75rem auto;
+  line-height: 1.6;
+}
+
+.profissionais-section strong {
+  font-weight: 700;
+  color: #ffcc00;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .profissionais-section h2 {
+    font-size: 2rem;
+  }
+
+  .profissionais-section p {
+    font-size: 1rem;
+  }
+}
+
+/*CONTINUAÇÃO SOBRE*/ 
+.sobre-nos-section {
+  background-color: #fff;
+  color: #003366;
+  padding: 5rem 2rem;
+}
+
+.sobre-nos-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sobre-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.texto-sobre {
+  flex: 1 1 400px;
+}
+
+.texto-sobre-servico {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  text-align: center; 
+  color: #fff;
+}
+
+.texto-sobre h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.texto-sobre p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.imagem-sobre {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.imagem-sobre img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px #4184bf ;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sobre-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imagem-sobre {
+    margin-top: 2rem;
+  }
+}
+
+/*SERVIÇOS*/
+/* Import das fontes (coloque no topo do seu CSS) */
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+
+/* Variáveis */
+:root {
+  --color-primary: #4184bf;
+  --transition-time: 0.5s;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background: #fafafa;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Container dos cards */
+.cards-wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 4rem;
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.card {
+  font-family: 'Heebo', sans-serif;
+  --bg-filter-opacity: 0.5;
+  background-image:
+    linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)), rgba(0,0,0,var(--bg-filter-opacity))),
+    var(--bg-img);
+  height: 20em;
+  width: 100%;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5em -1em black;
+  transition: all var(--transition-time);
+  position: relative;
+  overflow: hidden;
+  border: 10px solid #ccc;
+}
+
+/* Hover do card */
+.card:hover {
+  color: var(--color-primary);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.card:hover:before, .card:hover:after {
+  transform: scale(1);
+}
+
+/* Texto */
+.card h1 {
+  margin: 0 0 0.25em 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.card p {
+  font-size: 0.75em;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 0 0.5em 0;
+  line-height: 1.4em;
+}
+
+/* Tags */
+.card .tags {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.card .tag {
+  font-size: 0.75em;
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.3rem;
+  padding: 0 0.5em;
+  line-height: 1.5em;
+  transition: background var(--transition-time), color var(--transition-time);
+}
+
+.card:hover .tags .tag {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Data */
+.card .date {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 0.75em;
+  opacity: 0.8;
+}
+
+/* Efeitos circulares */
+.card:before, .card:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  left: -50%;
+  top: -50%;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: all var(--transition-time) ease-in-out;
+  z-index: -1;
+}
+
+.card:before {
+  background: #ddd;
+  width: 250%;
+  height: 250%;
+}
+
+.card:after {
+  background: white;
+  width: 200%;
+  height: 200%;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* --- MODO ESCURO --- */
+body.dark-mode {
+  background-color: #121619;
+  color: #ddd;
+}
+
+body.dark-mode header {
+  background-color: #1e2a38;
+  color: #ddd;
+}
+
+body.dark-mode nav a {
+  color: #bbb;
+}
+
+body.dark-mode nav a:hover {
+  color: #ffcc00;
+}
+
+body.dark-mode .user-icons a {
+  color: #bbb;
+}
+
+/*Botão de modo escuro*/
+body.dark-mode .dark-mode-toggle {
+  background: #202027;
+  box-shadow: inset 0 0 8px #202027;
+}
+
+body.dark-mode .hero-slider {
+  background-color: #1e2a38;
+}
+
+body.dark-mode .hero-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .cta-btn {
+  background-color: #ffcc00;
+  color: #1e2a38;
+}
+
+body.dark-mode .cta-btn:hover {
+  background-color: #e6b800;
+}
+
+body.dark-mode .prev,
+body.dark-mode .next {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffcc00;
+}
+
+body.dark-mode .dots .dot {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .dots .dot.active {
+  background: #ffcc00;
+}

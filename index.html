@@ -1,72 +1,143 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InsideLibras</title>
+  <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
-  <div class="barra-topo"></div>
 
-  <!-- Header com logo e menu -->
   <header>
-    <div class="logo">
-      <img src="/img/image__3_-removebg-preview (2).png" alt="Logo da empresa">
-    </div>
-
-    <!-- Botão hambúrguer -->
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
-    <!-- Menu de navegação -->
-    <nav class="nav">
+    <div class="logo">InsideLibras</div>
+    <nav>
       <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#contato" class="btn-contato">Contato</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Serviço</a></li>
+        <li><a href="#">Suporte</a></li>
+        <li><a href="#">Contato</a></li>
       </ul>
     </nav>
+    <div class="menu-toggle">☰</div>
+
+ <label class="switch" aria-label="Alternar modo escuro">
+  <input type="checkbox" id="theme-toggle">
+  <span class="slider">
+    <span class="icon sun">🌞</span>
+    <span class="icon moon">🌙</span>
+  </span>
+</label>
+
+
+
+
   </header>
 
-  <!-- SLIDER DENTRO DA HERO -->
-  <section class="hero-slider">
-    <input type="radio" name="hero-slide" id="hero-slide1" checked>
-    <input type="radio" name="hero-slide" id="hero-slide2">
-    <input type="radio" name="hero-slide" id="hero-slide3">
+ <section class="hero-slider">
+  <div class="slides">
+    <div class="slide active">
+      <img src="img/pexels-thatguycraig000-1563356.jpg" alt="Soluções TOTVS" />
+    </div>
+    <div class="slide">
+      <img src="img/pexels-cottonbro-6321244.jpg" alt="Produtos TOTVS" />
+    </div>
+    <div class="slide">
+      <img src="img/pexels-shvetsa-5614124.jpg" alt="Suporte TOTVS" />
+    </div>
+  </div>
 
-    <div class="hero-wrapper">
-      <div class="hero img1">
-        <div class="conteudo">
-          <h1>Slide 1</h1>
-        </div>
-      </div>
-      <div class="hero img2">
-        <div class="conteudo">
-          <h1>Slide 2</h1>
-        </div>
-      </div>
-      <div class="hero img3">
-        <div class="conteudo">
-          <h1>Slide 3</h1>
-        </div>
-      </div>
+    <button class="prev" aria-label="Slide anterior">❮</button>
+    <button class="next" aria-label="Próximo slide">❯</button>
+
+    <div class="dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
     </div>
 
-    <div class="hero-nav">
-      <label for="hero-slide1"></label>
-      <label for="hero-slide2"></label>
-      <label for="hero-slide3"></label>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Transformando seu negócio</h1>
+        <p>Soluções inteligentes para todas as indústrias.</p>
+        <a href="" class="cta-btn">Saiba Mais</a>
+      </div>
     </div>
   </section>
 
-  <!-- Seções -->
-  <main>
-    <section id="inicio"><h1>Bem-vindo!</h1></section>
-    <section id="sobre"><h2>Sobre Nós</h2></section>
-    <section id="servicos"><h2>Serviços</h2></section>
-    <section id="contato"><h2>Fale Conosco</h2></section>
-  </main>
+  <section class="profissionais-section">
+  <div class="container">
+    <h2>Através de <span>Profissionais qualificados</span> e experientes</h2>
+    <p>
+      Nossa equipe é formada por especialistas dedicados, comprometidos em oferecer as melhores soluções em Libras para sua empresa ou projeto. 
+    </p>
+    <p>
+      Valorizamos a <strong>qualidade</strong>, a <strong>acessibilidade</strong> e o <strong>respeito</strong> em cada atendimento, garantindo uma comunicação clara e eficiente.
+    </p>
+  </div>
+</section>
+
+<section class="sobre-nos-section">
+  <div class="container">
+    <div class="sobre-content">
+      <div class="texto-sobre">
+        <h2>Sobre a InsideLibras</h2>
+        <p>
+          A InsideLibras é uma empresa dedicada a facilitar a comunicação por meio da Língua Brasileira de Sinais (Libras). 
+          Com tecnologia inovadora e uma equipe apaixonada, oferecemos soluções personalizadas para inclusão e acessibilidade.
+        </p>
+        <p>
+          Nosso compromisso é transformar a experiência de comunicação entre ouvintes e surdos, promovendo inclusão social, 
+          autonomia e respeito para todos.
+        </p>  
+      </div>
+      <div class="imagem-sobre">
+        <img src="img/image__3_-removebg-preview (2).png" alt="Equipe InsideLibras" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cards-section" style="background:#4184bf; padding:4rem 2rem;">
+  <div class="texto-sobre-servico">
+    <h2>Serviços</h2>
+  </div>
+  <div class="cards-wrapper">
+    <a href="#" class="card" style="--bg-img: url('https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg')">
+      <h1>Learning to Code</h1>
+      <p>Opening a door to the future</p>
+      <div class="tags">
+        <span class="tag">Learn</span>
+        <span class="tag">Code</span>
+        <span class="tag">HTML</span>
+      </div>
+      <div class="date">Aug 24, 2015</div>
+    </a>
+
+    <a href="#" class="card" style="--bg-img: url('https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg')">
+      <h1>Mastering the Language</h1>
+      <p>Java is not the same as JavaScript</p>
+      <div class="tags">
+        <span class="tag">Learn</span>
+        <span class="tag">Code</span>
+        <span class="tag">JavaScript</span>
+      </div>
+      <div class="date">July 15, 2015</div>
+    </a>
+
+    <a href="#" class="card" style="--bg-img: url('https://storage.googleapis.com/chydlx/codepen/blog-cards/image-3.jpg')">
+      <h1>Design Patterns</h1>
+      <p>Improve your coding with proven solutions</p>
+      <div class="tags">
+        <span class="tag">Design</span>
+        <span class="tag">Patterns</span>
+        <span class="tag">Best Practices</span>
+      </div>
+      <div class="date">Jan 10, 2024</div>
+    </a>
+  </div>
+</section>
+
+
+  <script src="JS/script.js"></script>
 </body>
 </html>
