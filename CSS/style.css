@@ -478,6 +478,10 @@ a {
 }
 
 /* Card */
+.cards-section {
+  background-color: #4184bf
+}
+
 .card {
   font-family: 'Heebo', sans-serif;
   --bg-filter-opacity: 0.5;
