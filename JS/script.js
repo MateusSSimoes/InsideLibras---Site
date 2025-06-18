@@ -51,3 +51,18 @@ toggle.addEventListener('change', function () {
     localStorage.setItem('theme', 'light');
   }
 });
+
+/* SERVIÇOS */ 
+  const observarSecoes = document.querySelectorAll('.servico-detalhado');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observarSecoes.forEach(secao => observer.observe(secao));
+

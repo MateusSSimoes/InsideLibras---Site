@@ -473,13 +473,14 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 4rem;
   padding: 0;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
 /* Card */
 .cards-section {
-  background-color: #4184bf
+  background-color: #4184bf;
+  height: 700px;
 }
 
 .card {
@@ -592,6 +593,11 @@ a {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
+
+  .cards-section {
+  height: 2200px;
+}
+
 }
 
 @media (max-width: 600px) {
@@ -599,6 +605,105 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* --- SERVIÇOS-CONTINUAÇÃO ---*/
+.servico-pagina {
+  padding: 100px 5vw;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.servico-pagina .hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.servico-pagina .hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.servico-pagina .hero p {
+  font-size: 1.3rem;
+  color: #555;
+}
+
+.servico-pagina .conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.servico-pagina .texto h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #222;
+}
+
+.servico-pagina .texto p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.servico-pagina ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.servico-pagina ul li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.servico-pagina ul li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #4184bf;
+}
+
+.servico-pagina .imagem img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.botao {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4184bf;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #254364;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .servico-pagina .conteudo {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .servico-pagina .imagem {
+    margin-top: 40px;
+  }
+}
+
+
 
 
 
