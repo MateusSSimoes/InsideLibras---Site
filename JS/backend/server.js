@@ -33,7 +33,7 @@ app.post('/send-email', async (req, res) => {
   const mailOptions = {
     from: process.env.EMAIL_USER || 'InsideLibras.Form@gmail.com',
     replyTo: email,
-    to: 'InsideLibras@gmail.com',
+    to: 'InsideLibrasOficial@gmail.com',
     subject: `Contato via site: ${subject || 'Sem assunto'}`,
     text: `
       Nome: ${name}
