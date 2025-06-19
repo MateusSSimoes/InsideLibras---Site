@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const port = 3001;  // alterei a porta aqui
+const port = process.env.PORT || 3001;
 
 // Middlewares
 app.use(cors());
@@ -31,8 +31,8 @@ app.post('/send-email', async (req, res) => {
   });
 
   const mailOptions = {
-    from: 'InsideLibras.Form@gmail.com',  // seu e-mail autorizado
-    replyTo: email,                       // e-mail do cliente para resposta
+    from: process.env.EMAIL_USER || 'InsideLibras.Form@gmail.com',
+    replyTo: email,
     to: 'InsideLibras@gmail.com',
     subject: `Contato via site: ${subject || 'Sem assunto'}`,
     text: `
@@ -42,19 +42,24 @@ app.post('/send-email', async (req, res) => {
 
       Mensagem:
       ${message}
-    `
+    `,
   };
 
   try {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true, message: 'E-mail enviado com sucesso!' });
   } catch (error) {
-    console.error('Erro ao enviar e-mail:', error);
+    console.error('Erro ao enviar e-mail:', error.message);
     res.status(500).json({ success: false, error: 'Erro ao enviar o e-mail.' });
   }
 });
 
+// Middleware para rotas não encontradas
+app.use((req, res) => {
+  res.status(404).json({ success: false, error: 'Rota não encontrada' });
+});
+
 // Inicia o servidor
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+  console.log(`Servidor rodando na porta ${port}`);
 });
