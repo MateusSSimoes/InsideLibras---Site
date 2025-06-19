@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>InsideLibras</title>
   <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-rDF3ZcfpWl7TxL0gRkZbzD3P68EblZ3sw7BbUlX5Fn+aY3xFz2c9OfqZ5+9+KFrzzN+sl5rz6JHZqMB6tCWzWw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
   <header>
     <div class="logo">InsideLibras</div>
     <nav>
-      <ul>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Serviço</a></li>
-        <li><a href="#">Suporte</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
+    <ul>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servico">Serviço</a></li>
+    <li><a href="#suporte">Suporte</a></li>
+    <li><a href="#contato" class="contato-destaque">Contato</a></li>
+    </ul>
     </nav>
     <div class="menu-toggle">☰</div>
 
@@ -78,7 +81,7 @@
 </section>
 
 <!-- Sobre a InsideLibras -->
-<section class="sobre-nos-section">
+<section class="sobre-nos-section reveal">
   <div class="container">
     <div class="sobre-content">
       <div class="texto-sobre">
@@ -93,21 +96,43 @@
         </p>  
       </div>
       <div class="imagem-sobre">
-        <img src="img/image__3_-removebg-preview (2).png" alt="Equipe InsideLibras" />
+        <img src="img/logo1.png" alt="Equipe InsideLibras" />
       </div>
+    </div>
+  </div>
+  
+</section>
+
+<!--MVV-->
+<section class="mvv-section reveal">
+  <div class="container-mvv">
+    <div class="mvv-item">
+      <div class="icon-check">✔</div>
+      <h3>MISSÃO</h3>
+      <p>Promover a inclusão e acessibilidade para pessoas surdas e com deficiência auditiva, garantindo a comunicação como direito fundamental.</p>
+    </div>
+    <div class="mvv-item">
+      <div class="icon-check">✔</div>
+      <h3>VISÃO</h3>
+      <p>Ser referência nacional em acessibilidade comunicacional, construindo uma sociedade inclusiva com igualdade de oportunidades para todos.</p>
+    </div>
+    <div class="mvv-item">
+      <div class="icon-check">✔</div>
+      <h3>VALORES</h3>
+      <p>Inclusão, acessibilidade, respeito, comprometimento, inovação e defesa dos direitos humanos.</p>
     </div>
   </div>
 </section>
 
 <!-- Cards de Serviços -->
-<section class="cards-section">
+<section class="cards-section reveal">
   <div class="texto-sobre-servico">
     <h2>Serviços</h2>
   </div>
   <div class="cards-wrapper">
     
     <!-- Card 1: Acessibilidade em Libras -->
-    <a href="#" class="card" style="--bg-img: url('/img/libras1.jpeg')">
+    <a href="#libras" class="card" style="--bg-img: url('/img/libras1.jpeg')">
       <h1>Acessibilidade em Libras</h1>
       <p>Interpretação de Libras para eventos, reuniões e palestras, promovendo inclusão e compreensão para pessoas surdas.</p>
       <div class="tags">
@@ -119,7 +144,7 @@
     </a>
 
     <!-- Card 2: Audiodescrição -->
-    <a href="#" class="card" style="--bg-img: url('https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg')">
+    <a href="#audiodescricao" class="card" style="--bg-img: url('/img/acessibilidade1.jpg')">
       <h1>Audiodescrição</h1>
       <p>Transformamos o visual em narrativa para que pessoas com deficiência visual tenham experiências completas e imersivas.</p>
       <div class="tags">
@@ -131,7 +156,7 @@
     </a>
 
     <!-- Card 3: Mentorias e Treinamentos -->
-    <a href="#" class="card" style="--bg-img: url('/img/libras.jpeg')">
+    <a href="#mentoria" class="card" style="--bg-img: url('/img/libras5.jpg')">
       <h1>Mentorias e Treinamentos</h1>
       <p>Capacitação em acessibilidade e inclusão para empresas e indivíduos. Transforme seu ambiente em um espaço inclusivo.</p>
       <div class="tags">
@@ -143,7 +168,7 @@
     </a>
 
     <!-- Card 4: Cursos -->
-   <a href="#" class="card" style="--bg-img: url('/img/libras2.jpeg')">
+   <a href="#cursos" class="card" style="--bg-img: url('/img/cursos1.jpg')">
       <h1>Cursos</h1>
       <p>Cursos de Libras, audiodescrição e acessibilidade para iniciantes e profissionais. Conte com uma equipe experiente.</p>
       <div class="tags">
@@ -159,12 +184,68 @@
 
 </section>
 
-<section class="servico-pagina servico-libras">
+<section class="timeline-section">
+  <h2 class="timeline-title">Nossa Jornada</h2>
+  <div class="timeline">
+    
+    <div class="timeline-item">
+      <div class="timeline-year">XXXX</div>
+      <div class="timeline-content">
+        <h3>Um Gesto que Mudou Tudo</h3>
+        <p>Com apenas 10 anos, presenciei algo que me marcou: um colega surdo da minha sala estava isolado. Escrevi: “Quero ser seu amigo. Me ensina Libras?”. Esse pequeno gesto deu início a uma amizade e a uma paixão que transformaria minha vida.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">XXXX</div>
+      <div class="timeline-content">
+        <h3>Aprendizado com Propósito</h3>
+        <p>Motivado por essa experiência, mergulhei em cursos livres e aprendi diretamente com a comunidade surda. Não era apenas um idioma — era um universo de cultura, expressão e identidade.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">XXXX</div>
+      <div class="timeline-content">
+        <h3>Formação e Primeiros Passos Profissionais</h3>
+        <p>Aos 18 anos, comecei a atuar profissionalmente como intérprete. Concluí Letras Libras e depois Processos Gerenciais, sempre com foco em inclusão e autonomia.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">XXXX</div>
+      <div class="timeline-content">
+        <h3>A Semente da InsideLibras</h3>
+        <p>Durante uma mentoria, uma cliente perguntou: “Por que você ainda não tem uma empresa?”. Essa pergunta virou a chave. Eu já tinha o projeto, mas o incentivo dela me fez dar o primeiro passo.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">XXXX</div>
+      <div class="timeline-content">
+        <h3>InsideLibras Nasce</h3>
+        <p>Nascia a InsideLibras – Conectando mundos, transformando vidas. Comecei a oferecer formações, consultorias e cursos, unindo técnica e empatia para promover acessibilidade real.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">Hoje</div>
+      <div class="timeline-content">
+        <h3>Seguimos Transformando Vidas</h3>
+        <p>A InsideLibras é fruto de uma caminhada de amor, escuta e coragem. Estamos prontos para construir novas pontes e transformar vidas — uma sinalização de cada vez.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SERVIÇO: LIBRAS -->
+<section class="servico-pagina servico-libras reveal" id="libras">
   <div class="hero">
     <h1>Acessibilidade em Libras</h1>
     <p>Comunicação sem barreiras para pessoas surdas.</p>
   </div>
-
   <div class="conteudo">
     <div class="texto">
       <h2>Interpretação de Libras para todos os contextos</h2>
@@ -176,22 +257,42 @@
         <li>Atendimento para empresas, escolas e eventos culturais</li>
         <li>Equipe experiente e certificada</li>
       </ul>
-      <a href="/contato" class="botao">Solicite um Intérprete</a>
+      <div class="botoes-contato">
+  <a href="/contato" class="botao">Entre em contato</a>
+  <a href="https://wa.me/5511914147786" class="botao whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+      </div>
     </div>
-    <div class="imagem">
-      <img src="/i" alt="Intérprete de Libras em palco">
+    <div class="imagem hover-imagem">
+      <img src="/img/libras1.jpeg" alt="Intérprete de Libras">
+      <div class="imagem-overlay">Em cada gesto, uma ponte.</div>
     </div>
   </div>
+
+  <!-- Feedbacks Libras -->
+  <section class="feedbacks-servico">
+    <h2>O que dizem sobre este serviço</h2>
+    <div class="feedbacks-wrapper">
+      <div class="feedback-card">
+        <p class="mensagem">“A intérprete foi essencial para que eu pudesse participar plenamente do evento. Me senti realmente incluída!”</p>
+        <p class="autor">— Carla, pessoa surda</p>
+      </div>
+      <div class="feedback-card">
+        <p class="mensagem">“Ter Libras disponível nas nossas reuniões transformou o clima da empresa. Inclusão virou parte da cultura.”</p>
+        <p class="autor">— Lucas, gerente de RH</p>
+      </div>
+    </div>
+  </section>
 </section>
 
 
-
-<section class="servico-pagina servico-audiodescricao">
+<!-- SERVIÇO: AUDIODESCRIÇÃO -->
+<section class="servico-pagina servico-audiodescricao reveal" id="audiodescricao">
   <div class="hero">
     <h1>Audiodescrição</h1>
     <p>Dê vida às imagens com palavras para quem não pode ver.</p>
   </div>
-
   <div class="conteudo">
     <div class="texto">
       <h2>Inclusão através da narrativa descritiva</h2>
@@ -203,20 +304,42 @@
         <li>Produção profissional e roteiro detalhado</li>
         <li>Consultoria em acessibilidade audiovisual</li>
       </ul>
-      <a href="/contato" class="botao">Fale com um Especialista</a>
+      <div class="botoes-contato">
+  <a href="/contato" class="botao">Entre em contato</a>
+  <a href="https://wa.me/5511914147786" class="botao whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+</div>
     </div>
-    <div class="imagem">
-      <img src="https://storagex/codepen/blog-cards/image-2.jpg" alt="Pessoa ouvindo audiodescrição com fone">
+    <div class="imagem hover-imagem">
+      <img src="/img/audio.jpg" alt="Pessoa ouvindo audiodescrição com fone de ouvido">
+      <div class="imagem-overlay">A imagem também fala.</div>
     </div>
   </div>
+
+  <!-- Feedbacks Audiodescrição -->
+  <section class="feedbacks-servico">
+    <h2>O que dizem sobre este serviço</h2>
+    <div class="feedbacks-wrapper">
+      <div class="feedback-card">
+        <p class="mensagem">“A audiodescrição trouxe uma nova dimensão para o meu espetáculo. Agora todos podem entender cada detalhe.”</p>
+        <p class="autor">— Mariana, produtora cultural</p>
+      </div>
+      <div class="feedback-card">
+        <p class="mensagem">“O roteiro foi muito bem feito, a narração é clara e ajuda muito na compreensão do conteúdo visual.”</p>
+        <p class="autor">— João, pessoa com deficiência visual</p>
+      </div>
+    </div>
+  </section>
 </section>
 
-<section class="servico-pagina servico-mentoria">
+
+<!-- SERVIÇO: MENTORIAS -->
+<section class="servico-pagina servico-mentoria reveal" id="mentoria">
   <div class="hero">
     <h1>Mentorias e Treinamentos</h1>
     <p>Capacite sua equipe para promover acessibilidade real.</p>
   </div>
-
   <div class="conteudo">
     <div class="texto">
       <h2>Formações personalizadas em acessibilidade</h2>
@@ -228,20 +351,42 @@
         <li>Conteúdo atualizado e facilitadores especialistas</li>
         <li>Mentoria com acompanhamento contínuo</li>
       </ul>
-      <a href="/contato" class="botao">Agende sua Mentoria</a>
+      <div class="botoes-contato">
+  <a href="/contato" class="botao">Entre em contato</a>
+  <a href="https://wa.me/5511914147786" class="botao whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+      </div>
     </div>
-    <div class="imagem">
-      <img src="/img/jpeg" alt="Pessoa conduzindo treinamento sobre acessibilidade">
+    <div class="imagem hover-imagem">
+      <img src="/img/mentoria.jpeg" alt="Pessoa conduzindo treinamento sobre acessibilidade">
+      <div class="imagem-overlay">Formação com propósito.</div>
     </div>
   </div>
+
+  <!-- Feedbacks Mentorias -->
+  <section class="feedbacks-servico">
+    <h2>O que dizem sobre este serviço</h2>
+    <div class="feedbacks-wrapper">
+      <div class="feedback-card">
+        <p class="mensagem">“O treinamento foi muito produtivo e transformador para nossa equipe. Aumentou a conscientização e a empatia.”</p>
+        <p class="autor">— Ana, coordenadora de RH</p>
+      </div>
+      <div class="feedback-card">
+        <p class="mensagem">“A mentoria ajudou a empresa a implementar práticas acessíveis de forma clara e prática.”</p>
+        <p class="autor">— Rafael, empresário</p>
+      </div>
+    </div>
+  </section>
 </section>
 
-<section class="servico-pagina servico-cursos">
+
+<!-- SERVIÇO: CURSOS -->
+<section class="servico-pagina servico-cursos reveal" id="cursos">
   <div class="hero">
     <h1>Cursos</h1>
     <p>Aprenda Libras, audiodescrição e acessibilidade com especialistas.</p>
   </div>
-
   <div class="conteudo">
     <div class="texto">
       <h2>Educação acessível e de qualidade</h2>
@@ -253,17 +398,98 @@
         <li>Formação em audiodescrição e acessibilidade digital</li>
         <li>Modalidades presenciais, híbridas e online</li>
       </ul>
-      <a href="/contato" class="botao">Ver próximos cursos</a>
+     <div class="botoes-contato">
+  <a href="/contato" class="botao">Entre em contato</a>
+  <a href="https://wa.me/5511914147786" class="botao whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+  </div>
     </div>
-    <div class="imagem">
-      <img src="/img/peg" alt="Instrutor de Libras ensinando em sala">
+    <div class="imagem hover-imagem">
+      <img src="https://via.placeholder.com/600x400?text=Cursos" alt="Instrutor de Libras ensinando em sala de aula">
+      <div class="imagem-overlay">Educação transforma.</div>
     </div>
+  </div>
+
+  <!-- Feedbacks Cursos -->
+  <section class="feedbacks-servico">
+    <h2>O que dizem sobre este serviço</h2>
+    <div class="feedbacks-wrapper">
+      <div class="feedback-card">
+        <p class="mensagem">“O curso foi muito didático e o conteúdo facilitou meu aprendizado e aplicação prática.”</p>
+        <p class="autor">— Fernanda, aluna</p>
+      </div>
+      <div class="feedback-card">
+        <p class="mensagem">“Recomendo para todos que querem se especializar em acessibilidade com profissionais experientes.”</p>
+        <p class="autor">— Eduardo, profissional de inclusão</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- formulário  -->
+<section class="contato-section" id="contato">
+  <div class="container-contato">
+    <h2>Fale com a InsideLibras</h2>
+    <p>Preencha o formulário abaixo e retornaremos o mais breve possível.</p>
+
+    <form action="SEU_BACKEND_AQUI" method="POST" class="form-contato">
+      
+      <!-- Nome -->
+      <div class="campo-flutuante">
+        <input type="text" name="nome" id="nome" required>
+        <label for="nome"><i class="fas fa-user"></i> Nome completo</label>
+      </div>
+
+      <!-- E-mail -->
+      <div class="campo-flutuante">
+        <input type="email" name="email" id="email" required>
+        <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+      </div>
+
+      <!-- Assunto -->
+      <div class="campo-flutuante">
+        <select name="assunto" id="assunto" required>
+          <option value="" disabled selected hidden></option>
+          <option value="servicos">Quero contratar um serviço</option>
+          <option value="curso">Tenho interesse em um curso</option>
+          <option value="parceria">Propor uma parceria</option>
+          <option value="outros">Outros assuntos</option>
+        </select>
+        <label for="assunto"><i class="fas fa-tag"></i> Assunto</label>
+      </div>
+
+      <!-- Mensagem -->
+      <div class="campo-flutuante">
+        <textarea name="mensagem" id="mensagem" rows="5" required></textarea>
+        <label for="mensagem"><i class="fas fa-comment-dots"></i> Mensagem</label>
+      </div>
+
+      <!-- Opt-in -->
+      <div class="optin">
+        <input type="checkbox" id="novidades" name="novidades">
+        <label for="novidades">Desejo receber novidades e conteúdos sobre acessibilidade</label>
+      </div>
+
+      <!-- Botões -->
+      <div class="botoes-contato">
+        <button type="submit" class="botao">Enviar mensagem</button>
+        <a href="https://wa.me/SEUNUMERO" target="_blank" class="botao whatsapp-btn">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+
+    </form>
   </div>
 </section>
 
 
 
 
+
+
+
   <script src="JS/script.js"></script>
+  <script src="JS/backend/server.js"></script>
 </body>
 </html>

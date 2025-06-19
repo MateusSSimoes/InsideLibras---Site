@@ -66,3 +66,86 @@ toggle.addEventListener('change', function () {
 
   observarSecoes.forEach(secao => observer.observe(secao));
 
+  /*Jornada*/
+  function revealTimelineItems() {
+    const items = document.querySelectorAll('.timeline-item');
+    const windowHeight = window.innerHeight;
+
+    items.forEach(item => {
+      const elementTop = item.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 100) {
+        item.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealTimelineItems);
+  window.addEventListener('load', revealTimelineItems);
+
+/* Scroll Reveal */
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach((element) => {
+      const elementTop = element.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) {
+        element.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.ad
+
+  /* FORMULÁRIO DE CONTATO */
+  const form = document.querySelector('.form-contato');
+  const resposta = document.getElementById('resposta-form');
+  const submitBtn = form.querySelector('.botao[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    const dados = {
+      name: form.nome.value.trim(),
+      email: form.email.value.trim(),
+      subject: form.assunto.value,
+      message: form.mensagem.value.trim(),
+      novidades: form.novidades.checked,
+    };
+
+    try {
+      const res = await fetch('http://localhost:3001/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+      });
+
+      const resultado = await res.json();
+
+      if (resultado.success) {
+        resposta.textContent = '✅ Sua mensagem foi enviada com sucesso!';
+        resposta.style.color = 'green';
+        form.reset();
+      } else {
+        resposta.textContent = '⚠️ Erro ao enviar. Tente novamente.';
+        resposta.style.color = 'red';
+      }
+
+    } catch (erro) {
+      console.error('Erro ao conectar:', erro);
+      resposta.textContent = '❌ Erro de conexão com o servidor.';
+      resposta.style.color = 'red';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar mensagem';
+    }
+  });
+
+
