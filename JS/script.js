@@ -119,13 +119,14 @@ toggle.addEventListener('change', function () {
     };
 
     try {
-      const res = await fetch('http://localhost:3001/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dados)
-      });
+     const res = await fetch('https://backend-insidelibras.onrender.com/send-email', {
+     method: 'POST',
+      headers: {
+         'Content-Type': 'application/json'
+                },
+      body: JSON.stringify(dados)
+    });
+
 
       const resultado = await res.json();
 
