@@ -179,8 +179,74 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
+/*VOLTAR AO INÍCIO*/
+const btnTopo = document.getElementById('btn-topo');
+
+// Mostrar botão ao rolar 100px para baixo
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    btnTopo.style.display = 'block';
+  } else {
+    btnTopo.style.display = 'none';
+  }
+});
+
+// Scroll suave ao clicar
+btnTopo.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 
 
 
-/* VLIBRAS */
-new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+
+/* AUDIODESCRIÇÃO */
+document.getElementById('btnOuvir').addEventListener('click', () => {
+  const textos = [];
+
+  // Captura o texto da seção Hero
+  const hero = document.querySelector('#inicio');
+  if (hero) textos.push(hero.innerText);
+
+  // Captura o texto da seção Profissionais
+  const profissionais = document.querySelector('.profissionais-section');
+  if (profissionais) textos.push(profissionais.innerText);
+
+  // Captura o texto da seção Sobre
+  const sobre = document.querySelector('#sobre');
+  if (sobre) textos.push(sobre.innerText);
+
+  // Captura o texto da seção Serviços
+  const servico = document.querySelector('#servico');
+  if (servico) textos.push(servico.innerText);
+
+  // Captura o texto da seção Jornada
+  const jornada = document.querySelector('#jornada');
+  if (jornada) textos.push(jornada.innerText);
+
+  // Captura o texto da seção Contato
+  const contato = document.querySelector('#contato');
+  if (contato) textos.push(contato.innerText);
+
+  // Junta todos os textos com separação para facilitar a leitura
+  const textoCompleto = textos.join('\n\n');
+
+  if (!textoCompleto.trim()) {
+    alert('Não há conteúdo para ler.');
+    return;
+  }
+
+  // Cria a fala
+  const speech = new SpeechSynthesisUtterance(textoCompleto);
+
+  // Configurações opcionais (exemplo: voz, velocidade)
+  speech.lang = 'pt-BR';
+  speech.rate = 1;
+  speech.pitch = 1;
+
+  // Inicia a leitura
+  window.speechSynthesis.speak(speech);
+});
