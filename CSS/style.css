@@ -136,12 +136,12 @@ nav.active + .menu-toggle, /* se o botão estiver depois do nav */
 }
 
 .menu-toggle {
-  display: block;
-  margin-right: 80px;
-  margin-bottom: 3px;
+  margin-left: auto;
+  margin-right: 16px; /* ajuste fino para afastar da borda */
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
-  }
+}
+
 }
 
 
