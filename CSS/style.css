@@ -18,10 +18,17 @@ header {
   z-index: 1000;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+.logo img {
+  height: 120px; /* ou o tamanho que desejar */
+  width: auto;
 }
+
+.logo-footer img {
+  height: 150px; /* ou o tamanho que desejar */
+  width: auto;
+  margin-top: 20px;
+}
+
 
 /* Estilo padrão para desktop */
 nav {
@@ -465,7 +472,7 @@ nav.active + .menu-toggle, /* se o botão estiver depois do nav */
     flex-direction: column;
     background-color: #4184bf;
     position: absolute;
-    top: 70px;
+    top: 65px;
     right: 0;
     padding: 1rem;
     display: none;
