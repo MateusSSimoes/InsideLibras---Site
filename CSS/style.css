@@ -78,6 +78,24 @@ nav .nav-links li a.contato-destaque:hover {
 
 /* Responsivo */
 @media (max-width: 768px) {
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    flex-grow: 1;
+  }
+
+  .menu-toggle {
+    margin: 0;
+  }
+
+
   
 nav {
   position: absolute;
