@@ -1182,7 +1182,7 @@ a {
   line-height: 1.5;
   max-width: 320px;
   margin: 0 auto;
-  text-align: justify;
+  text-align: left;
 }
 
 /* Linha pontilhada entre os itens (menos no último) */
