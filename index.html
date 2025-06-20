@@ -6,47 +6,49 @@
   <title>InsideLibras</title>
   <link rel="stylesheet" href="CSS/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-rDF3ZcfpWl7TxL0gRkZbzD3P68EblZ3sw7BbUlX5Fn+aY3xFz2c9OfqZ5+9+KFrzzN+sl5rz6JHZqMB6tCWzWw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
 
-  <header>
+   <header>
     <div class="logo">InsideLibras</div>
-    <nav>
-    <ul>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#servico">Serviço</a></li>
-    <li><a href="#suporte">Suporte</a></li>
-    <li><a href="#contato" class="contato-destaque">Contato</a></li>
-    </ul>
-    </nav>
+
     <div class="menu-toggle">☰</div>
 
- <label class="switch" aria-label="Alternar modo escuro">
-  <input type="checkbox" id="theme-toggle">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servico">Serviço</a></li>
+        <li><a href="#jornada">Jornada</a></li>
+        <li><a href="#contato" class="contato-destaque">Fale Conosco</a></li>
+      </ul>
+    </nav>
+
+  <label class="switch">
+  <input type="checkbox" id="darkModeToggle">
   <span class="slider">
-    <span class="icon sun">🌞</span>
+    <span class="icon sun">☀️</span>
     <span class="icon moon">🌙</span>
   </span>
 </label>
 
 
+</header>
 
-
-  </header>
 
 <!-- Hero Slider -->
- <section class="hero-slider">
+ <section class="hero-slider" id="inicio">
   <div class="slides">
     <div class="slide active">
-      <img src="img/libras2.jpeg" alt="Soluções TOTVS" />
+      <img src="img/slide.jpg" alt="InsideLibras" />
     </div>
     <div class="slide">
-      <img src="img/libras5.jpg" alt="Produtos TOTVS" />
+      <img src="img/libras5.jpg" alt="InsideLibras" />
     </div>
     <div class="slide">
-      <img src="img/libras4.jpg" alt="Suporte TOTVS" />
+      <img src="img/libras4.jpg" alt="InsideLibras" />
     </div>
   </div>
 
@@ -63,7 +65,7 @@
       <div class="hero-content">
         <h1>Conectando mundos, transformando vidas</h1>
         <p>Acessibilidade com Libras, audiodescrição e inclusão em todos os espaços.</p>
-        <a href="" class="cta-btn">Saiba Mais</a>
+        <a href="#sobre" class="cta-btn">Saiba Mais</a>
       </div>
     </div>
   </section>
@@ -81,7 +83,7 @@
 </section>
 
 <!-- Sobre a InsideLibras -->
-<section class="sobre-nos-section reveal">
+<section class="sobre-nos-section reveal" id="sobre">
   <div class="container">
     <div class="sobre-content">
       <div class="texto-sobre">
@@ -96,12 +98,32 @@
         </p>  
       </div>
       <div class="imagem-sobre">
-        <img src="img/logo1.png" alt="Equipe InsideLibras" />
+        <img src="img/logo-claro.png" class="logo claro" alt="Logo InsideLibras">
+        <img src="img/logo-escura.JPG" class="logo escuro" alt="Logo InsideLibras">
       </div>
     </div>
   </div>
   
 </section>
+
+<!-- SOBRE MIM-->
+<section class="sobre-mim">
+  <div class="container-sobre">
+    <div class="imagem-sobre">
+      <img src="img/mim.JPEG" alt="Sobre Mim">
+    </div>
+    <div class="texto-sobre">
+      <h2>Sobre Thiago Quintano</h2>
+      <p>
+        Sou um profissional comprometido com a inclusão e acessibilidade, atuando com Libras, audiodescrição e formação especializada para transformar vidas e conectar realidades.
+      </p>
+      <p>
+        Por meio de mentorias, serviços e treinamentos, promovo uma comunicação mais acessível e empática para todos.
+      </p>
+    </div>
+  </div>
+</section>
+
 
 <!--MVV-->
 <section class="mvv-section reveal">
@@ -125,7 +147,7 @@
 </section>
 
 <!-- Cards de Serviços -->
-<section class="cards-section reveal">
+<section class="cards-section reveal" id="servico">
   <div class="texto-sobre-servico">
     <h2>Serviços</h2>
   </div>
@@ -184,47 +206,41 @@
 
 </section>
 
-<section class="timeline-section">
+<section class="timeline-section" id="jornada">
   <h2 class="timeline-title">Nossa Jornada</h2>
   <div class="timeline">
     
     <div class="timeline-item">
-      <div class="timeline-year">XXXX</div>
+      <div class="timeline-year">1995</div>
       <div class="timeline-content">
-        <h3>Um Gesto que Mudou Tudo</h3>
-        <p>Com apenas 10 anos, presenciei algo que me marcou: um colega surdo da minha sala estava isolado. Escrevi: “Quero ser seu amigo. Me ensina Libras?”. Esse pequeno gesto deu início a uma amizade e a uma paixão que transformaria minha vida.</p>
+        <h3>Início da Paixão pelas Libras</h3>
+        <p>Desde 1995, quando aprendi Libras, tive o privilégio de mergulhar nesse universo. O que inicialmente era um novo conhecimento logo se transformou em uma paixão. A cada sinal aprendido, meu encantamento pela riqueza e importância dessa língua para a inclusão só aumentava.</p>
       </div>
     </div>
 
     <div class="timeline-item">
-      <div class="timeline-year">XXXX</div>
+      <div class="timeline-year">2010</div>
       <div class="timeline-content">
-        <h3>Aprendizado com Propósito</h3>
-        <p>Motivado por essa experiência, mergulhei em cursos livres e aprendi diretamente com a comunidade surda. Não era apenas um idioma — era um universo de cultura, expressão e identidade.</p>
+        <h3>Sonho com a Acessibilidade</h3>
+        <p>Mesmo antes de empreender, eu já alimentava o desejo de criar algo voltado à acessibilidade. A ideia de uma empresa sempre esteve presente, mesmo que ainda distante da prática.</p>
       </div>
     </div>
 
     <div class="timeline-item">
-      <div class="timeline-year">XXXX</div>
+      <div class="timeline-year">2019</div>
       <div class="timeline-content">
-        <h3>Formação e Primeiros Passos Profissionais</h3>
-        <p>Aos 18 anos, comecei a atuar profissionalmente como intérprete. Concluí Letras Libras e depois Processos Gerenciais, sempre com foco em inclusão e autonomia.</p>
+        <h3>Mentoria que Virou a Chave</h3>
+        <p>Em 2019, durante mentorias em Libras para uma amiga, surgiu a pergunta que mudou tudo:
+“Por que você não cria sua própria empresa para oferecer cursos, mentorias e consultorias em Libras?”
+Essa provocação foi o empurrão que eu precisava. A partir desse momento, transformei paixão em propósito. Nascia minha empresa, com o objetivo de promover acessibilidade em empresas, eventos e diversos ambientes.</p>
       </div>
     </div>
 
     <div class="timeline-item">
-      <div class="timeline-year">XXXX</div>
+      <div class="timeline-year">2024</div>
       <div class="timeline-content">
-        <h3>A Semente da InsideLibras</h3>
-        <p>Durante uma mentoria, uma cliente perguntou: “Por que você ainda não tem uma empresa?”. Essa pergunta virou a chave. Eu já tinha o projeto, mas o incentivo dela me fez dar o primeiro passo.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-year">XXXX</div>
-      <div class="timeline-content">
-        <h3>InsideLibras Nasce</h3>
-        <p>Nascia a InsideLibras – Conectando mundos, transformando vidas. Comecei a oferecer formações, consultorias e cursos, unindo técnica e empatia para promover acessibilidade real.</p>
+        <h3>Construindo Inclusão, um Sinal de Cada Vez</h3>
+        <p>Desde então, sigo me dedicando para tornar a Libras cada vez mais acessível. O foco é transformar barreiras em pontes, promovendo conexões reais e construindo um mundo mais inclusivo — um sinal de cada vez.</p>
       </div>
     </div>
 
@@ -258,7 +274,7 @@
         <li>Equipe experiente e certificada</li>
       </ul>
       <div class="botoes-contato">
-  <a href="/contato" class="botao">Entre em contato</a>
+  <a href="#contato" class="botao">Entre em contato</a>
   <a href="https://wa.me/5511914147786" class="botao whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-whatsapp"></i> WhatsApp
   </a>
@@ -305,7 +321,7 @@
         <li>Consultoria em acessibilidade audiovisual</li>
       </ul>
       <div class="botoes-contato">
-  <a href="/contato" class="botao">Entre em contato</a>
+  <a href="#contato" class="botao">Entre em contato</a>
   <a href="https://wa.me/5511914147786" class="botao whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-whatsapp"></i> WhatsApp
   </a>
@@ -352,7 +368,7 @@
         <li>Mentoria com acompanhamento contínuo</li>
       </ul>
       <div class="botoes-contato">
-  <a href="/contato" class="botao">Entre em contato</a>
+  <a href="#contato" class="botao">Entre em contato</a>
   <a href="https://wa.me/5511914147786" class="botao whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-whatsapp"></i> WhatsApp
   </a>
@@ -399,14 +415,14 @@
         <li>Modalidades presenciais, híbridas e online</li>
       </ul>
      <div class="botoes-contato">
-  <a href="/contato" class="botao">Entre em contato</a>
+  <a href="#contato" class="botao">Entre em contato</a>
   <a href="https://wa.me/5511914147786" class="botao whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-whatsapp"></i> WhatsApp
   </a>
   </div>
     </div>
     <div class="imagem hover-imagem">
-      <img src="https://via.placeholder.com/600x400?text=Cursos" alt="Instrutor de Libras ensinando em sala de aula">
+      <img src="img/cursos.jpg" alt="Instrutor de Libras ensinando em aula online">
       <div class="imagem-overlay">Educação transforma.</div>
     </div>
   </div>
@@ -433,7 +449,7 @@
     <h2>Fale com a InsideLibras</h2>
     <p>Preencha o formulário abaixo e retornaremos o mais breve possível.</p>
 
-    <form action="SEU_BACKEND_AQUI" method="POST" class="form-contato">
+    <form method="POST" class="form-contato">
       
       <!-- Nome -->
       <div class="campo-flutuante">
@@ -474,7 +490,7 @@
       <!-- Botões -->
       <div class="botoes-contato">
         <button type="submit" class="botao">Enviar mensagem</button>
-        <a href="https://wa.me/SEUNUMERO" target="_blank" class="botao whatsapp-btn">
+        <a href="https://wa.me/5511914147786" target="_blank" class="botao whatsapp-btn">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </div>
@@ -483,13 +499,63 @@
   </div>
 </section>
 
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-info">
+      <h3>InsideLibras</h3>
+      <p>Conectando mundos, transformando vidas.</p>
+    </div>
 
+    <div class="footer-links">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servico">Serviços</a>
+      <a href="#contato">Contato</a>
+    </div>
 
+    <div class="footer-social">
+      <a href="https://www.instagram.com/InsideLibrasOFICIAL" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="mailto:InsideLibras@gmail.com" aria-label="E-mail">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
+  </div>
 
+  <div class="footer-bottom">
+    <p>&copy; 2025 InsideLibras. Todos os direitos reservados.</p>
+  </div>
+
+  <div class="footer-credits">
+  <p>
+    Imagens por:
+    <a href="https://www.pexels.com/@shvets-production" target="_blank">SHVETS production</a>,
+    <a href="https://www.pexels.com/@cottonbro" target="_blank">cottonbro studio</a>,
+    <a href="https://www.pexels.com/@george-milton" target="_blank">George Milton</a>,
+    <a href="https://www.pexels.com/@mikael-blomkvist" target="_blank">Mikael Blomkvist</a>
+    via <a href="https://www.pexels.com" target="_blank">Pexels</a>.
+  </p>
+</div>
+
+</footer>
+
+<!-- Scripts -->
+ <!-- VLIBRAS -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 
 
 
   <script src="JS/script.js"></script>
-  <script src="JS/backend/server.js"></script>
 </body>
 </html>

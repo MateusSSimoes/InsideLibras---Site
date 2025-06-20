@@ -23,10 +23,17 @@ header {
   font-weight: bold;
 }
 
-nav ul {
+/* Estilo padrão para desktop */
+nav {
+  display: flex;
+}
+
+nav .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
+  margin-left: 400px;
+  font-size: 22px;
 }
 
 nav a {
@@ -40,7 +47,7 @@ nav a:hover {
   color: #bfb30a;
 }
 
-nav ul li a.contato-destaque {
+nav .nav-links li a.contato-destaque {
   background-color: #ffcc00;
   color: #003366 !important;
   padding: 10px 20px;
@@ -49,10 +56,77 @@ nav ul li a.contato-destaque {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a.contato-destaque:hover {
+nav .nav-links li a.contato-destaque:hover {
   background-color: #e6b800;
   color: white !important;
 }
+
+.logo.escuro {
+  display: none;
+}
+
+/* Botão hambúrguer (desktop escondido) */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+  user-select: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  
+nav {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  width: 100%;
+  background-color: #4184bf;
+  padding: 1rem 2rem;
+
+  /* Removido display:none */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  flex-direction: column;
+}
+
+nav.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  background-color: transparent;
+}
+
+nav .nav-links {
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* animação do botão menu quando ativo */
+nav.active + .menu-toggle, /* se o botão estiver depois do nav */
+.menu-toggle.active {
+  transform: rotate(90deg) scale(1.2);
+  color: #bfb30a;
+}
+
+.menu-toggle {
+  display: block;
+  margin-right: 80px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  }
+}
+
+
 
 
 .user-icons a {
@@ -68,14 +142,14 @@ nav ul li a.contato-destaque:hover {
   cursor: pointer;
 }
 
-/*Botão Modo Escuro*/
-/* Switch base */
+/* Botão Modo Escuro */
 .switch {
   position: relative;
   display: inline-block;
   width: 70px;
   height: 32px;
-  margin-bottom: 8px;
+  margin-left: 1rem;
+  margin-bottom: 35px;
 }
 
 .switch input {
@@ -85,7 +159,9 @@ nav ul li a.contato-destaque:hover {
 }
 
 .slider {
+  position: absolute;
   cursor: pointer;
+  background-color: #ffcc00;
   border-radius: 34px;
   width: 100%;
   height: 100%;
@@ -96,7 +172,10 @@ nav ul li a.contato-destaque:hover {
   padding: 0 8px;
   font-size: 20px;
   overflow: hidden;
+  position: relative;
 }
+
+
 
 /* Ícones */
 .slider .icon {
@@ -104,48 +183,91 @@ nav ul li a.contato-destaque:hover {
   position: absolute;
   left: 50%;
   top: 50%;
+  top: 14px;
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
 
-.slider .sun {
-  background-color: #e6b800;
-  border-radius: 19px;
-  color: #f39c12;
-  width: 70px;
-  height: 35px;
-  text-align: center;
+.sobre-mim {
+  padding: 5rem 2rem;
+  background-color: #fff;
+  color: #003366;
 }
 
+.container-sobre {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.imagem-sobre {
+  flex: 1 1 400px;
+  text-align: center;
+  
+}
+
+.imagem-sobre img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.texto-sobre {
+  flex: 1 1 400px;
+}
+
+.texto-sobre h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.texto-sobre p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container-sobre {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imagem-sobre {
+    margin-bottom: 2rem;
+  }
+}
+
+
+.slider .sun,
 .slider .moon {
-  background-color: #254364;
-  border-radius: 19px;
-  color: #2980b9;
-  width: 70px;
-  height: 35px;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.6);
-  text-align: center;
+  display: none;
 }
 
-/* Tema escuro */
+.switch input:not(:checked) + .slider .sun {
+  display: inline;
+  color: #003366;
+}
 
-
-.switch input:checked + .slider .sun {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.6);
+.switch input:checked + .slider {
+  background-color: #254364;
 }
 
 .switch input:checked + .slider .moon {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  display: inline;
+  color: #ffcc00;
 }
 
-/* RESPONSIVIDADE PARA O SWITCH */
+/* Responsivo */
 @media (max-width: 768px) {
   .switch {
-    width: 100px;
-    height: 26px;
+    width: 60px;
+    height: 28px;
   }
 
   .slider {
@@ -155,13 +277,14 @@ nav ul li a.contato-destaque:hover {
 
   .slider .icon {
     font-size: 16px;
+    top: 50%;
   }
 }
 
 @media (max-width: 480px) {
   .switch {
-    width: 48px;
-    height: 22px;
+    width: 50px;
+    height: 24px;
   }
 
   .slider {
@@ -171,8 +294,10 @@ nav ul li a.contato-destaque:hover {
 
   .slider .icon {
     font-size: 14px;
+    top: 50%;
   }
 }
+
 
 
 
@@ -301,6 +426,20 @@ nav ul li a.contato-destaque:hover {
 .cta-btn:hover {
   background-color: #e6b800;
 }
+
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider {
+    height: 50vh;
+    width: 100%;
+  }
+}
+
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -609,7 +748,7 @@ a {
   }
 
   .cards-section {
-  height: 2200px;
+  height: 1400px;
 }
 
 }
@@ -618,6 +757,10 @@ a {
   .cards-wrapper {
     grid-template-columns: 1fr;
   }
+
+  .cards-section {
+  height: 2500px;
+}
 }
 
 /* --- JORNADA --- */
@@ -684,6 +827,10 @@ a {
     padding-left: 10px;
     border-left: 4px solid #4184bf;
     margin-left: 15px;
+  }
+
+  body.dark-mode .timeline-item{
+    border-left: 4px solid #ffcc00;
   }
 }
 
@@ -1190,17 +1337,106 @@ select:invalid {
   }
 }
 
+/* --- FOOTER --- */
+.footer {
+  background-color: #4184bf;
+  color: #fff;
+  padding: 2rem 1rem;
+  font-family: sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.footer-links a {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-social a {
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-credits {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  margin-top: 1rem;
+}
+
+.footer-credits a {
+  color: #aaaaaa;
+  text-decoration: underline;
+}
+
+.footer-credits a:hover {
+  color: #fff;
+}
+
+/* Estilização personalizada do botão VLibras */
+[vw-access-button] {
+  width: 80px !important;
+  height: 80px !important;
+  background-color: #0073e6 !important;
+  border-radius: 50% !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 9999 !important;
+  align-items: center;
+}
+
+/* Efeito hover suave */
+[vw-access-button]:hover {  
+  transform: scale(1.1);
+  background-color: #005bb5 !important;
+}
+
+
 
 
 
 /* --- MODO ESCURO --- */
+
 body.dark-mode {
-  background-color: #121619;
+  background-color: #121a26;
   color: #ddd;
 }
 
 body.dark-mode header {
-  background-color: #1e2a38;
+  background-color: #121a26;
   color: #ddd;
 }
 
@@ -1251,6 +1487,231 @@ body.dark-mode .dots .dot {
 
 body.dark-mode .dots .dot.active {
   background: #ffcc00;
+}
+
+body.dark-mode .footer {
+  background-color: #121a26;
+  color: #ddd;
+}
+body.dark-mode .footer-links a {
+  color: #bbb;
+}
+
+
+/* Seções gerais */
+body.dark-mode .profissionais-section{
+  background-color: #121a26;
+  color: #ddd;
+}
+body.dark-mode .cards-section{
+  background-color: #121a26;
+  color: #ddd;
+}
+body.dark-mode .mvv-section{
+  background-color: #102a43;
+  color: #ddd;
+}
+body.dark-mode .feedbacks-servico{
+  background-color: #102a43;
+  color: #ddd;
+}
+body.dark-mode .contato-section{
+  background-color: #102a43;
+  color: #ddd;
+}
+body.dark-mode .servico-pagina{
+  background-color: #102a43;
+  color: #ddd;
+}
+body.dark-mode .sobre-nos-section{
+  background-color: #102a43;
+  color: #ddd;  
+}
+body.dark-mode .timeline-section {
+  background-color: #121a26;
+  color: #ddd;
+}
+body.dark-mode .feedback-card:hover {
+  border-left-color: #ffcc00;
+}
+body.dark-mode .feedback-card {
+  background-color: #1e2a38;
+  border-left-color: #4184bf;
+}
+
+body.dark-mode .feedback-card p{
+  color: #ffffff;
+}
+
+body.dark-mode .feedback-card .autor {
+  color: #ffcc00;
+}
+
+body.dark-mode .servico-pagina:hover {
+  box-shadow: 0 12px 35px #ffcc00;
+}
+
+body.dark-mode .servico-pagina{
+   box-shadow: 0 8px 30px #00000052;
+}
+
+body.dark-mode .servico-pagina .hero h1 {
+  color: #ffcc00;
+}
+body.dark-mode .servico-pagina .hero p {
+  color: #bbbbbb;
+}
+body.dark-mode .servico-pagina .texto h2 {
+  color: #bbbbbb;
+}
+body.dark-mode .servico-pagina .texto p {
+  color: #bbbbbb;
+}
+
+body.dark-mode .timeline{
+  border-left: 4px solid #ffcc00;
+}
+
+body.dark-mode .timeline-year{
+  color: #ffcc00;
+}
+/* Títulos */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffcc00;
+}
+
+/* Parágrafos e textos */
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span,
+body.dark-mode .mvv-item p,
+body.dark-mode .texto-sobre p,
+body.dark-mode .texto-sobre-servico {
+  color: #ccc;
+}
+
+/* Cards */
+body.dark-mode .card {
+  background-color: #1e2a38;
+  color: #ddd;
+  border-color: #2a3b50;
+}
+
+body.dark-mode .card:hover {
+  color: #ffcc00;
+}
+
+body.dark-mode .card .tag {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .card:hover .tags .tag {
+  background: #ffcc00;
+  color: #1e2a38;
+}
+
+/* Campos de formulário */
+body.dark-mode .campo-flutuante input,
+body.dark-mode .campo-flutuante textarea,
+body.dark-mode .campo-flutuante select {
+  background-color: #1e2a38;
+  color: #ddd;
+  border-color: #2a3b50;
+}
+
+
+body.dark-mode .campo-flutuante input:focus + label,
+body.dark-mode .campo-flutuante textarea:focus + label,
+body.dark-mode .campo-flutuante select:focus + label {
+  background-color: transparent;
+}
+
+body.dark-mode .campo-flutuante input:focus + label,
+body.dark-mode.campo-flutuante textarea:focus + label,
+body.dark-mode.campo-flutuante select:focus + label,
+body.dark-mode.campo-flutuante input:not(:placeholder-shown) + label,
+body.dark-mode.campo-flutuante textarea:not(:placeholder-shown) + label,
+body.dark-mode.campo-flutuante select:valid + label {
+  top: -12px;
+  left: 10px;
+  font-size: 0.85rem;
+  background-color: transparent;
+  padding: 0 6px;
+  color: #ffcc00;
+}
+
+body.dark-mode .campo-flutuante label{
+  color: #fff;
+  background-color: transparent;
+}
+
+body.dark-mode .optin{
+  color: #ddd;
+}
+/* Botões */
+body.dark-mode .botao {
+  background-color: #254364;
+  color: #fff;
+}
+
+body.dark-mode .botao:hover {
+  background-color: #32638e;
+}
+
+body.dark-mode .botao.whatsapp-btn {
+  background-color: #1e9c51;
+}
+
+/* Footer links */
+
+body.dark-mode .footer-social  {
+  background-color: #121a26;
+  color: #ddd;
+}
+body.dark-mode .footer-social:hover{
+  color: #ffcc00;
+}
+body.dark-mode .footer-links a {
+  color: #aaa;
+}
+
+body.dark-mode .footer-links a:hover {
+  color: #ffcc00;
+}
+
+body.dark-mode .footer-credits,
+body.dark-mode .footer-bottom {
+  color: #888;
+}
+
+body.dark-mode nav ul{
+  background-color: #121a26;
+}
+
+body.dark-mode .logo.escuro {
+  display: block;
+}
+body.dark-mode .logo.claro {
+  display: none;
+}
+
+body.dark-mode .logo{
+  color: #ffcc00;
+}
+
+body.dark-mode .sobre-mim {
+  background-color: #121a26;
+  color: #ddd;
+}
+
+body.dark-mode .texto-sobre h2 {
+  color: #ffcc00;
+}
+
+body.dark-mode .imagem-sobre img {
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
 
