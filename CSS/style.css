@@ -1430,26 +1430,6 @@ select:invalid {
   color: #fff;
 }
 
-/* Estilização personalizada do botão VLibras */
-[vw-access-button] {
-  width: 80px !important;
-  height: 80px !important;
-  background-color: #0073e6 !important;
-  border-radius: 50% !important;
-  border: 3px solid #ffffff !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  z-index: 9999 !important;
-  align-items: center;
-}
-
-/* Efeito hover suave */
-[vw-access-button]:hover {  
-  transform: scale(1.1);
-  background-color: #005bb5 !important;
-}
-
-
 
 
 
