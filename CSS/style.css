@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+section {
+  scroll-margin-top: 90px;
+}
+
 /* Header */
 header {
   display: flex;
@@ -18,15 +22,23 @@ header {
   z-index: 1000;
 }
 
-.logo img {
-  height: 120px; /* ou o tamanho que desejar */
-  width: auto;
+.logo {
+  text-align: center;
+  padding: 1rem;
+  color: white; /* ajuste conforme o fundo do seu site */
+  font-family: 'Lato', sans-serif; /* ou qualquer fonte que preferir */
 }
 
-.logo-footer img {
-  height: 150px; /* ou o tamanho que desejar */
-  width: auto;
-  margin-top: 20px;
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.logo-slogan {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
 }
 
 
@@ -68,9 +80,6 @@ nav .nav-links li a.contato-destaque:hover {
   color: white !important;
 }
 
-.logo.escuro {
-  display: none;
-}
 
 /* Botão hambúrguer (desktop escondido) */
 .menu-toggle {
@@ -1863,12 +1872,22 @@ body.dark-mode nav ul{
   background-color: #121a26;
 }
 
-body.dark-mode .logo.escuro {
-  display: block;
+.logo-img.claro {
+  display: inline;
 }
-body.dark-mode .logo.claro {
+
+.logo-img.escuro {
   display: none;
 }
+
+body.dark-mode .logo-img.claro {
+  display: none;
+}
+
+body.dark-mode .logo-img.escuro {
+  display: inline;
+}
+
 
 body.dark-mode .logo{
   color: #ffcc00;

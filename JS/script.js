@@ -250,3 +250,8 @@ document.getElementById('btnOuvir').addEventListener('click', () => {
   // Inicia a leitura
   window.speechSynthesis.speak(speech);
 });
+
+document.querySelector('#botao-tema').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
+
