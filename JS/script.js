@@ -203,8 +203,15 @@ btnTopo.addEventListener('click', () => {
 
 
 
-/* AUDIODESCRIÇÃO */
 document.getElementById('btnOuvir').addEventListener('click', () => {
+  const synth = window.speechSynthesis;
+
+  // Se já estiver falando, cancela a leitura
+  if (synth.speaking || synth.paused) {
+    synth.cancel();
+    return;
+  }
+
   const textos = [];
 
   // Captura o texto da seção Hero
@@ -231,7 +238,6 @@ document.getElementById('btnOuvir').addEventListener('click', () => {
   const contato = document.querySelector('#contato');
   if (contato) textos.push(contato.innerText);
 
-  // Junta todos os textos com separação para facilitar a leitura
   const textoCompleto = textos.join('\n\n');
 
   if (!textoCompleto.trim()) {
@@ -239,19 +245,11 @@ document.getElementById('btnOuvir').addEventListener('click', () => {
     return;
   }
 
-  // Cria a fala
   const speech = new SpeechSynthesisUtterance(textoCompleto);
-
-  // Configurações opcionais (exemplo: voz, velocidade)
   speech.lang = 'pt-BR';
   speech.rate = 1;
   speech.pitch = 1;
 
-  // Inicia a leitura
-  window.speechSynthesis.speak(speech);
-});
-
-document.querySelector('#botao-tema').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
+  synth.speak(speech);
 });
 
