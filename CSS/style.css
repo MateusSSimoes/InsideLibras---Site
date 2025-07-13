@@ -225,7 +225,7 @@
     color: white;
   }
 
-  @media (min-width: 769px) and (max-width: 1475px) {
+  @media (min-width: 769px) and (max-width: 1565px) {
 
   /* Layout do menu recolhido */
   nav {
@@ -317,7 +317,7 @@
 }
 
 
- @media (min-width: 1476px) {
+ @media (min-width: 1565px) {
   .menu-toggle {
     display: none;
   }
