@@ -22,25 +22,11 @@
     z-index: 1000;
   }
 
-  .logo {
-    text-align: center;
-    padding: 1rem;
-    color: white; /* ajuste conforme o fundo do seu site */
-    font-family: 'Lato', sans-serif; /* ou qualquer fonte que preferir */
+  .logo img {
+    height: 120px;
+    width: auto;
+    margin-right: 20px;
   }
-
-  .logo-text {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .logo-slogan {
-    font-size: 0.9rem;
-    margin: 0;
-    font-weight: 500;
-  }
-
 
   /* Estilo padrão para desktop */
   nav {
@@ -1319,6 +1305,93 @@
     }
   }
 
+  /* --- EMPRESAS/SERVIÇOS --- */
+  .servicos-clientes-section {
+  padding: 4rem 2rem;
+  background-color: #4184bf;
+  color: #fff;
+  text-align: center;
+}
+
+.container-servicos {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container-servicos h2 {
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.depoimentos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.depoimento-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px #0000009d;
+  transition: transform 0.3s ease;
+}
+
+.depoimento-card:hover {
+  transform: scale(1.02);
+}
+
+.depoimento-card img {
+  width: 40%;
+  object-fit: cover;
+  height: 100%;
+  filter: brightness(0.9);
+}
+
+.depoimento-texto {
+  padding: 1.5rem;
+  text-align: left;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.depoimento-texto h3 {
+  margin-bottom: 0.5rem;
+  color: #003366;
+  font-size: 1.7rem;
+}
+
+.servico {
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.comentario {
+  color: #000000;
+  font-style: italic;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .depoimento-card {
+    flex-direction: column;
+  }
+
+  .depoimento-card img,
+  .depoimento-texto {
+    width: 100%;
+  }
+
+  .depoimento-texto {
+    padding: 1rem;
+  }
+}
+
   /* --- MVV --- */
   .mvv-section {
     background-color: #fff;
@@ -2010,6 +2083,18 @@
 
   body.dark-mode .botao.whatsapp-btn {
     background-color: #1e9c51;
+  }
+
+  /* EMPRESAS/SERVIÇOS */
+  body.dark-mode .servicos-clientes-section {
+    background-color: #121a26;
+  }
+  body.dark-mode .container-servicos h2 {
+    color: #ffcc00;
+  }
+  body.dark-mode .depoimento-card {
+    background-color: #102a43;
+    color: #ddd;
   }
 
   /* Footer links */
