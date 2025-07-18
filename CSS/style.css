@@ -1377,7 +1377,7 @@
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
+@media (max-width: 1110px) {
   .depoimento-card {
     flex-direction: column;
   }
